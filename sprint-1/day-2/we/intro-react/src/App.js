@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const data = [
+    { name: "nakul", age: 12 },
+    { name: "navin", age: 29 },
+    { name: "bhush", age: 21 },
+    { name: "akshak", age: 19 },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div>
+       {data.map((user) => (Userdata(user)))}
+     </div>
     </div>
   );
 }
+
+function Userdata({name,age}){
+ return( <div>
+    <h1>hello {name}</h1>
+  <p>
+    {name} age is {age}
+  </p>
+  </div>
+ )
+}
+
 
 export default App;
