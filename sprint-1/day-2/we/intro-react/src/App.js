@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
      <div>
-       {data.map((user) => (Userdata(user)))}
+       {data.map((user) => (<Userdata name={user.name} age={user.age}/>))}
      </div>
     </div>
   );
