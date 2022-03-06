@@ -3,9 +3,10 @@ import './App.css';
 import {Counter} from "./components/Counter.jsx"
 
 function App() {
+  const value = 0
   return (
     <div className="App">
-   <Counter/>
+   <Counter value={value}/>
     </div>
   );
 }

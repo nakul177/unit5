@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-export function Counter(){
-    const [count , setCounter ]= useState(0)
+export function Counter({value}){
+    const [count , setCounter ]= useState(value)
     
     return(
     <div>
