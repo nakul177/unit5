@@ -13,8 +13,29 @@ setData(result.data);
     })();
   }, []);
  return(
-     <div>
-         {data.name}
-     </div>
+    <div>
+    <table>
+    <tr>
+ <th>Name</th>
+ <th>Age</th>
+ <th>Address</th>
+ <th>Department</th>
+ <th>Salary</th>
+ <th> marital state </th>
+</tr>
+   {data.map((e) =>(
+
+<tr key={e.id}>
+ <td>{e.Name}</td>
+ <td>{e.Age}</td>
+ <td>{e.Addresss}</td>
+ <td>{e.Departemnt}</td>
+ <td>{e.Salary}</td>
+ <td>{e.marital}</td>
+</tr>
+
+    ))}
+     </table>
+    </div> 
  )
 }
