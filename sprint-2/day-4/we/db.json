@@ -9,6 +9,75 @@
       "username": "nakul123",
       "age": "12",
       "id": 2
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Adderss": "",
+      "Departemnt": "",
+      "Salary": "",
+      "marital": "on",
+      "Address": "kela",
+      " Salary": "1233",
+      "id": 3
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Adderss": "",
+      "Departemnt": "",
+      "Salary": "",
+      "marital": "on",
+      "Address": "kela",
+      " Salary": "123",
+      "id": 4
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Adderss": "",
+      "Departemnt": "",
+      "Salary": "",
+      "marital": "on",
+      "Address": "kela",
+      " Salary": "123",
+      "id": 5
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Address": "kela",
+      "Departemnt": "",
+      "Salary": "122",
+      "marital": "on",
+      "id": 6
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Address": "kela",
+      "Departemnt": "IT",
+      "Salary": "122",
+      "marital": "on",
+      "id": 7
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Address": "kela",
+      "Departemnt": "IT",
+      "Salary": "122",
+      "marital": "on",
+      "id": 8
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Address": "kela",
+      "Departemnt": "Police",
+      "Salary": "122",
+      "marital": "on",
+      "id": 9
     }
   ]
 }

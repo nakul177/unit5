@@ -31,7 +31,7 @@ export const Grocery = () =>{
         <div>
        <Groceryinput  Additems={Additems}/> 
        {list.map((elms) =>(
-          <Grocerylist todos={elms} handleDone={handleDone} handldelete={handldelete}/> 
+          <Grocerylist todos={elms}  key={elms.id} handleDone={handleDone} handldelete={handldelete}/> 
        ))} 
         </div>
       

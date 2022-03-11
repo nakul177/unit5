@@ -36,7 +36,7 @@ export const Form = () => {
 
   return (
     <>
-      <h1>Sign IN Form</h1>
+      <h1>Sign In Form</h1>
       <form action="" onSubmit={handleSubmit}>
         <label>Name :-</label>
         <input id="Name" type="text" placeholder="Name" onChange={handleData} required/>
