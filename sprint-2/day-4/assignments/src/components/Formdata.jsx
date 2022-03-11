@@ -31,7 +31,7 @@ setData(result.data);
  <td>{e.Addresss}</td>
  <td>{e.Departemnt}</td>
  <td>{e.Salary}</td>
- <td>{e.marital}</td>
+ <td>{e.marital ?"Single" :"Married"  }</td>
 </tr>
 
     ))}

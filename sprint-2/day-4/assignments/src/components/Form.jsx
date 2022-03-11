@@ -9,7 +9,7 @@ export const Form = () => {
     Addresss: "",
     Departemnt: "",
     Salary: "",
-    marital: "",
+    marital: false,
   });
 
   //   const [data, setData] = useState([]);
@@ -20,6 +20,14 @@ export const Form = () => {
   // setData(result.data);
   //     })();
   //   }, []);
+  const handleCheckbox = (e) => {
+    const { id } = e.target;
+    const value = e.target.checked;
+    setUserData({
+      ...userData,
+      [id]: value,
+    });
+  };
 
   const handleData = (e) => {
     const { id, value } = e.target;
@@ -70,7 +78,7 @@ export const Form = () => {
         />
         <br />
         <label htmlFor="Name">marital :-</label>
-        <input id="marital" type="checkbox" onChange={handleData} /> <br />
+        <input id="marital" type="checkbox" onChange={handleCheckbox} /> <br />
         <input type="submit" value="submit" />
       </form>
 

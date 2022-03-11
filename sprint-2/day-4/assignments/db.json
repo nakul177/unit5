@@ -1,5 +1,31 @@
 {
   "User": [
-  
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Addresss": "kela",
+      "Departemnt": "It",
+      "Salary": "12",
+      "marital": true,
+      "id": 1
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Addresss": "kela",
+      "Departemnt": "It",
+      "Salary": "123",
+      "marital": true,
+      "id": 2
+    },
+    {
+      "Name": "nakul",
+      "Age": "12",
+      "Addresss": "kela",
+      "Departemnt": "It",
+      "Salary": "122",
+      "marital": false,
+      "id": 3
+    }
   ]
 }
