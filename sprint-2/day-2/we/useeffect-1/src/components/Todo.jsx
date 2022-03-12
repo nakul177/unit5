@@ -2,20 +2,25 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 export const Todo = () =>{
-const [text , setText] = useState({
-    todo:""
-})
+const [text , setText] = useState("")
+const [data , setData] = useState([])
+const [page, setPage] = useState(1)
 
-const handle = (e) =>{
-    const {id , value} = e.target
-    setText({...text , [id] : value })
+useEffect(() =>{
+  getData();
+}, [page])
+
+const getData = () =>{
+    axios.get(`http://localhost:3003/Tododata?_limit=3&_page=${page}`).then(res =>{
+        setData(res.data)
+            })
 }
 
 const handleData = () =>{
     try{
-        axios.post("http://localhost:3003/Tododata", text).then(() => {
-            alert("Thanks");
-          });
+        axios.post("http://localhost:3003/Tododata", {text})
+        getData()
+
     }catch(err){
         console.log("worng")
     }
@@ -24,8 +29,17 @@ const handleData = () =>{
 
     return(
         <div>
-            <input id="todo" type="text" placeholder="Todo" onChange={handle}/>
+            <input id="todo" type="text" placeholder="Todo" onChange={(e) =>{
+                setText(e.target.value)
+            }}/>
             <button onClick={handleData} >Add</button>
+            {data.map(e => <h2 key={e.id}>{e.text}</h2>)}
+            <button onClick={() =>{
+                setPage(page -1)
+            }}>prev</button>
+            <button onClick={() =>{
+                setPage(page+1)
+            }}>Next</button>
         </div>
     )
 

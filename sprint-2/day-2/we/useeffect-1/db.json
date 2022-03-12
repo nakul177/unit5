@@ -1,17 +1,24 @@
 {
   "Tododata": [
     {
-      "add": "",
+      "text": "masala",
       "id": 1
     },
     {
-      "todo": "",
-      "data": "dad",
+      "text": "dal",
       "id": 2
     },
     {
-      "todo": "data",
+      "text": "rice",
       "id": 3
+    },
+    {
+      "text": "chana",
+      "id": 4
+    },
+    {
+      "text": "aloo",
+      "id": 5
     }
   ]
 }
