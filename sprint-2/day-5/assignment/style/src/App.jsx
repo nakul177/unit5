@@ -5,16 +5,13 @@ import { useState } from 'react';
 
 function App() {
 
-const [text, settext] = useState([])
-
-
   return (
     <div className="App">
-   <Button theme={"a"}>Primary Button</Button>
-   <Button theme={"b"}>Default button</Button>
-   <Button theme={"c"}>Dashed button</Button>
-   <Button theme={"d"}>Text button</Button>
-   <Button theme={"e"}>Link button</Button>
+   <Button bg="#2FA4FF"  color='white' border="none">Primary Button</Button>
+   <Button bg="white"  color='black' border="1px solid black" >Default button</Button>
+   <Button bg="white"  color='black' border="1px dashed black">Dashed button</Button>
+   <Button bg="white"  color='black' border="none">Text button</Button>
+   <Button bg="white"  color='blue' border="none">Link button</Button>
     </div>
   );
 }
