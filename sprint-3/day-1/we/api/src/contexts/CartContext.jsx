@@ -1,8 +1,15 @@
-const { createContext } = require("react");
+const { createContext, useState } = require("react");
 
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export const CartContextProvider = ({children}) => {
-    return <CartContext.Provider value={0}>{children}</CartContext.Provider>
+
+const [cart , setCart] = useState(10)
+
+const handleChange = (value) =>{
+    setCart(cart + value)
+} 
+
+    return <CartContext.Provider value={{ cart , handleChange}}>{children}</CartContext.Provider>
 }
