@@ -1,4 +1,19 @@
-export const ProductsDetailsPage = () => {
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+
+export const ProductsDetailsPage = ({title , price}) => {
+  const [product , setProduct] = useState([])
+  const {id} = useParams()
+ 
+
+  useEffect(() =>{
+    axios.get(`https://fakestoreapi.com/products/${id}`).then((res)=>{
+      const data = res.data
+     setProduct([data])
+    })
+  },[])
   return (
     <>
       <div
@@ -10,16 +25,20 @@ export const ProductsDetailsPage = () => {
         }}
       >
         <img src={""} alt="" />
-        <div className="productDetails" style={{ padding: "20px" }}>
+        {product.map((el)=>(
+        <div key={el.id} className="productDetails" style={{ padding: "20px" }}>
           <div>
-            <h2 className="productName">{product.name}</h2>
-            <h5 className="productPrice">Price : {product.price}</h5>
+            <h2 className="productName">{el.title}</h2>
+            <h5 className="productPrice">Price : {el.price}</h5>
           </div>
           <h5>Specifications : </h5>
           <div style={{ width: "700px", paddingLeft: "30px" }}>
-            {/* Show Product specification here */}
+            
+              <h1>{el.description}</h1>
+           
           </div>
         </div>
+         ))}
       </div>
     </>
   );

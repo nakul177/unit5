@@ -15,6 +15,7 @@ export const HomePage = () => {
           return <Link to={``}>{/* Show product image and name */}</Link>;
         })}
       </div>
+
     </>
   );
 };

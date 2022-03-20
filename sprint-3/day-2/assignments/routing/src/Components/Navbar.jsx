@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 const links = [
+  {to : "/" , title:"Home"} ,
+  {to:"/Product" , title:"Product"},
+  {to:"/Product/id" , title:"Products"}
   // Fix this links array, it's an array of objects {to: "", title: ""}
 ];
 

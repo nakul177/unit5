@@ -1,8 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ProductsDetailsPage } from "./ProductsDetailsPage";
 
 export const ProductsPage = () => {
+  const [dataproduct , setDataproduct] = useState([])
+  useEffect(() =>{
+  axios.get("https://fakestoreapi.com/products").then((res)=>{
+    console.log(res.data)
+    setDataproduct(res.data)
+    
+  })
+  },[])
   return (
     <>
       <div
@@ -19,9 +28,9 @@ export const ProductsPage = () => {
         <h4>Price</h4>
         <h4>Details</h4>
       </div>
-      {[].map((el) => {
+      {dataproduct.map((el) => {
         return (
-          <div
+          <div key={el.id}
             className="container"
             style={{
               display: "grid",
@@ -32,9 +41,9 @@ export const ProductsPage = () => {
               paddingTop: "10px",
             }}
           >
-            <div className="name">{el.name}</div>
+            <div  className="name">{el.title}</div>
             <div className="price">{el.price}</div>
-            <Link to={`/products/${el.id}`}>more details</Link>
+            <Link  to={`/products/${el.id}`}>more details</Link>
           </div>
         );
       })}
