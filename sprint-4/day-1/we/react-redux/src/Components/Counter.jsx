@@ -1,17 +1,25 @@
-import { store } from "../Redux/store";
+import {useDispatch , useSelector} from "react-redux"
+import { addcount, subcount } from "../Redux/action";
+
+
+
+
 export const Counter = () => {
-  console.log(store.getState());
+const dispatch = useDispatch()
+const count = useSelector((store) => store.count)
   return (
     <>
-      <h3>Counter : 0</h3>
+      <h3>Counter : {count}</h3>
       <button
         onClick={() => {
-          store.dispatch({ type: "ADD_COUNT", payload: 1 });
+          dispatch(addcount(1))
         }}
       >
         ADD 1
       </button>
-      <button onClick={() => {}}>SUB 1</button>
+      <button onClick={() => {
+         dispatch(subcount(1))
+      }}>SUB 1</button>
     </>
   );
 };
