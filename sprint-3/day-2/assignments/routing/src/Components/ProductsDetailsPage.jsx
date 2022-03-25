@@ -1,21 +1,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams , Navigate } from "react-router-dom";
+
 
 
 export const ProductsDetailsPage = ({title , price}) => {
   const [product , setProduct] = useState([])
+  const [state , setState] = useState(false)
   const {id} = useParams()
+  
  
 
   useEffect(() =>{
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((res)=>{
-      const data = res.data
-     setProduct([data])
-    })
+  axios.get(`http://localhost:3001/products/${id}`).then((res)=>{
+       setProduct(res.data)
+      })
+      .catch((err) =>{
+       setState(true)
+      }) 
   },[])
   return (
     <>
+    {state ?  (<Navigate to={"/notfound"} />) :(
       <div
         style={{
           display: "flex",
@@ -24,22 +30,22 @@ export const ProductsDetailsPage = ({title , price}) => {
           textAlign: "left",
         }}
       >
-        <img src={""} alt="" />
-        {product.map((el)=>(
-        <div key={el.id} className="productDetails" style={{ padding: "20px" }}>
+      
+          <div key={product.id} className="productDetails" style={{ padding: "20px" }}>
           <div>
-            <h2 className="productName">{el.title}</h2>
-            <h5 className="productPrice">Price : {el.price}</h5>
+            <h2 className="productName">{product.name}</h2>
+            <h5 className="productPrice">Price : {product.price}</h5>
           </div>
           <h5>Specifications : </h5>
           <div style={{ width: "700px", paddingLeft: "30px" }}>
             
-              <h1>{el.description}</h1>
-           
-          </div>
-        </div>
-         ))}
-      </div>
+              <h1>{product.description}</h1>
+           </div> 
+          </div> 
+      
+      </div>)
+      }
     </>
   );
+  
 };

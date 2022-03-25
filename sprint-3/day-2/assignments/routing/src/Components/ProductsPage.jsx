@@ -1,13 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ProductsDetailsPage } from "./ProductsDetailsPage";
+
 
 export const ProductsPage = () => {
   const [dataproduct , setDataproduct] = useState([])
   useEffect(() =>{
-  axios.get("https://fakestoreapi.com/products").then((res)=>{
-    console.log(res.data)
+  axios.get("http://localhost:3001/products").then((res)=>{
     setDataproduct(res.data)
     
   })
@@ -41,7 +40,7 @@ export const ProductsPage = () => {
               paddingTop: "10px",
             }}
           >
-            <div  className="name">{el.title}</div>
+            <div  className="name">{el.name}</div>
             <div className="price">{el.price}</div>
             <Link  to={`/products/${el.id}`}>more details</Link>
           </div>
