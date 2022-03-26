@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState ,useEffect } from "react"
 import { Tododata } from "../Redux/actions"
 import axios from "axios"
 
@@ -7,7 +7,9 @@ import axios from "axios"
 export const Todoinput = () =>{
 const [text , setText] = useState("")
 
-
+useEffect(() => {
+    Addtodos()
+}, [])
 
 
 const Addtodos = () => {

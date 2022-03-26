@@ -22,7 +22,7 @@ const getData = () =>{
     return(
 <div>
     {data.map((e , i) =>(
-         <Link key={i} to={`/todo/${id}`}>
+         <Link key={i} to={`todos/${e.id}`}>
          <h1>{e.title}</h1>
        </Link>
     ))}

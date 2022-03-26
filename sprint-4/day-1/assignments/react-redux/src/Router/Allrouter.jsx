@@ -8,7 +8,7 @@ export const Allrouter = () =>{
 <>
 <Routes>
          <Route path="/" element={<Todo/>}/>
-         <Route path="/todo/:id" element={<Tododetails/>} />
+         <Route path="/todos/:id" element={<Tododetails/>} />
      </Routes>
 </>
     )

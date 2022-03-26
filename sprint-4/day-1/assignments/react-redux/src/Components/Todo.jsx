@@ -1,3 +1,4 @@
+import { Tododetails } from "./Tododetails"
 import { Todoinput } from "./Todoinput"
 import { Todoitem } from "./Todoitem"
 
